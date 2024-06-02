@@ -1,0 +1,6 @@
+﻿
+.hydrotirol-panel img {
+    width: 100%;
+    max-width: 1100px;
+    -webkit-filter: invert(1);
+}

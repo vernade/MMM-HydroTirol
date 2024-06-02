@@ -1,0 +1,91 @@
+{
+    "altitude": 568,
+    "Beginn Q Ermittlung": "1951",
+    "Beobachtungsbeginn": "1870",
+    "Betreiber": "HD Tirol",
+    "CATCHMENT_NATURAL_SIZE": 5771.6,
+    "Foto": "1",
+    "GAUGE_DATUM": 568.46,
+    "latlng": [
+        47.2621930365445,
+        11.3808307733616
+    ],
+    "name": "Innsbruck",
+    "number": "201525",
+    "Profilgrafik": 1,
+    "values": {
+        "Q": {
+            "15m.Cmd.HD": {
+                "v": 301.761,
+                "unit": "m³/s",
+                "dt": 1717337700000
+            },
+            "Cmd.Statistik.HHQ": {
+                "v": 1525,
+                "unit": "m³/s",
+                "dt": 1124751600000
+            },
+            "Cmd.Statistik.NNQ": {
+                "v": 18.8,
+                "unit": "m³/s",
+                "dt": -249872400000
+            },
+            "Cmd.Statistik.NQT": {
+                "v": 32,
+                "unit": "m³/s",
+                "dt": 825807600000
+            },
+            "Day.Mean": {
+                "v": 380.436,
+                "unit": "m³/s",
+                "dt": 1717196400000
+            }
+        },
+        "LFKT": {
+            "15m.Cmd.P": {
+                "v": 199,
+                "unit": "µS/cm",
+                "dt": 1717337700000
+            }
+        },
+        "SSTF": {
+            "15m.Cmd.P": {
+                "v": 155,
+                "unit": "mg/l",
+                "dt": 1717337700000,
+                "classification": "100–1000 mg/l"
+            }
+        },
+        "W": {
+            "15m.Cmd.HD": {
+                "v": 355.7,
+                "unit": "cm",
+                "dt": 1717337700000,
+                "name": "15_a",
+                "classification": "<MW"
+            },
+            "Cmd.Schwellen.HW30": {
+                "v": 631.048,
+                "unit": "cm",
+                "dt": 1717369200000,
+                "name": "HW30*"
+            }
+        },
+        "WT": {
+            "15m.Cmd.HD": {
+                "v": 8.9,
+                "unit": "°C",
+                "dt": 1717337700000,
+                "classification": "5–10°C"
+            },
+            "Day.Mean": {
+                "v": 7.183,
+                "unit": "°C",
+                "dt": 1717282800000
+            }
+        }
+    },
+    "web_list_order": "180",
+    "WTO_CATCHMENT": "Inn oberhalb Innsbruck",
+    "WTO_OBJECT": "Inn"
+}

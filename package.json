@@ -1,0 +1,44 @@
+{
+  "name": "mmm-hydrotirol",
+  "version": "0.0.1",
+  "description": "",
+  "main": "node_helper.js",
+  "scripts": {
+    "test": "npm run test:prettier && npm run test:lint",
+    "test:lint": "eslint *.js --config .eslintrc.json",
+    "test:prettier": "prettier --check **/*.{js,css,json,md,yml}",
+    "lint:prettier": "prettier --write **/*.{js,css,json,md,yml}",
+    "lint:js": "eslint *.js --config .eslintrc.json --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vernade/MMM-HydroTirol.git"
+  },
+  "keywords": [
+    "magicmirror",
+    "magic",
+    "mirror",
+    "module"
+  ],
+  "author": "@vernade",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "prettier": "^2.2.1"
+  }
+}
