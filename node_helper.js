@@ -13,28 +13,33 @@ module.exports = NodeHelper.create({
     },
 
     checkStationData: function(response) {
-        console.log("Antwort ok: " + response.ok + "/" + response.body);
+        console.log("Wasserstand Daten empfanken ok: " + response.ok);
         return response;
     },  
 
-    start: function () {
+    fetchStationData: function() {
         var self = this;
-        self.stationData = null;
-        setInterval(function() { 
-            self.sendSocketNotification("REFRESH", self.stationData);
-        }, 50 * 60);
-
         fetch( "https://hydro.tirol.gv.at/stationdata/data.json?parameter=Wasserstand")
         .then(self.checkStationData)
         .then((response) => response.json())
         .then((responseJson) => {
             self.stationData = responseJson;
-            // console.log("Stationen geladen: " + responseJson.length)
-            // self.sendSocketNotification(
-            //     `LOADED_STATION_DATA`,
-            //     responseJson
-            // );
         });
+    },
+
+    start: function () {
+        var self = this;
+        self.stationData = null;
+        
+        // Alle 15min Daten holen
+        setInterval(function() { 
+            self.fetchStationData();
+        }, 1000 * 60 * 15);
+        
+        // Refresh alle 5s machen
+        setInterval(function() { 
+            self.sendSocketNotification("REFRESH", self.stationData);
+        }, 1000 * 5);
     },
 });
 
