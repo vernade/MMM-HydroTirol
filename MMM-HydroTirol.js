@@ -110,6 +110,7 @@ Module.register("MMM-HydroTirol", {
 						this.stationData = station;		
 						updateMillis = this.stationData["values"]["W"]["15m.Cmd.HD"]["dt"];
 						if (updateMillis > this.lastUpdateMillis) {
+							this.lastUpdateMillis = updateMillis;
 							var d = new Date(updateMillis);
 							console.log("HydroTirol - Neue Daten: " + d.toLocaleDateString('de-AT', { hour: "numeric", minute: "numeric"}));
 							this.updateDom();
