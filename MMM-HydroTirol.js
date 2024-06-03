@@ -52,27 +52,30 @@ Module.register("MMM-HydroTirol", {
 			minute: "numeric"
 		};
 		  
-		var info15m = this.stationData["values"]["W"]["15m.Cmd.HD"]
-		var lastUpdate = new Date(info15m["dt"]);
+		var wInfo15m = this.stationData["values"]["W"]["15m.Cmd.HD"]
+		var wtInfo15m = this.stationData["values"]["WT"]["15m.Cmd.HD"]
+		var lastUpdate = new Date(wInfo15m["dt"]);
 		lastUpdateString = lastUpdate.toLocaleDateString('de-AT', options);
 
 		imageUrl = this.getStationImageUrl(this.config["station"]);
 		// console.log("URL: " + imageUrl);
 
 		var titleContainer = document.createElement("div")
-		titleContainer.innerText = this.stationData["WTO_CATCHMENT"];
+		titleContainer.innerText = "Station " + this.stationData["WTO_OBJECT"]
+		+ " / " + this.stationData["name"];
 		titleContainer.className = "title medium";
 		
 		var infoContainer = document.createElement("div")
 		infoContainer.className = "hydrotirol-info";
 		
 		var depthContainer = document.createElement("span")
-		depthContainer.innerText = info15m["v"] + info15m["unit"];
+		depthContainer.innerText = wInfo15m["v"] + wInfo15m["unit"] + " | "
+		+ wtInfo15m["v"] + wtInfo15m["unit"] ;
 		depthContainer.className = "large hydrotirol-wasserstand-pegel bright";
 		
 		var depthContainerInfo = document.createElement("span")
-		depthContainerInfo.innerText = " (" + info15m["classification"]  
-		+ " | Stand: " + lastUpdateString + ")"
+		depthContainerInfo.innerText = wInfo15m["classification"]  
+		+ " | Stand: " + lastUpdateString
 
 		depthContainerInfo.className = "hydrotirol-wasserstand-info";
 

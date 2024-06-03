@@ -11,14 +11,18 @@
 }
 
 .hydrotirol .hydrotirol-info > div {
-    flex-grow: 1;
+    _flex-grow: 1;
 }
 
 .hydrotirol .hydrotirol-wasserstand-pegel {
-    vertical-align: bottom;
+    _vertical-align: bottom;
+    display: block;
 }
 
+
 .hydrotirol .hydrotirol-wasserstand-info {
-    text-align: right;
-    vertical-align: bottom;
+    _text-align: right;
+    _vertical-align: bottom;
+    clear: both;
+    display: block;
 }
