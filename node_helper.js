@@ -24,12 +24,14 @@ module.exports = NodeHelper.create({
         .then((response) => response.json())
         .then((responseJson) => {
             self.stationData = responseJson;
+            self.log("Stationsdaten geladen")
         });
     },
 
     start: function () {
         var self = this;
         self.stationData = null;
+        self.fetchStationData();
         
         // Alle 15min Daten holen
         setInterval(function() { 

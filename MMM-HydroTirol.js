@@ -100,24 +100,24 @@ Module.register("MMM-HydroTirol", {
 	},
 
 	socketNotificationReceived (notification, payload) {
-		console.log("Hydro: Notification: " + notification);
 		if (notification === "STARTED") {
 			// nichts?
 		} else if (notification === "REFRESH") {
-			if (payload != null && this.stationData == null) {
-				payload.forEach((station) => {
-					if (station["number"] == this.stationid) {
-						this.stationData = station;		
-						updateMillis = this.stationData["values"]["W"]["15m.Cmd.HD"]["dt"];
-						if (updateMillis > this.lastUpdateMillis) {
-							this.lastUpdateMillis = updateMillis;
-							var d = new Date(updateMillis);
-							console.log("HydroTirol - Neue Daten: " + d.toLocaleDateString('de-AT', { hour: "numeric", minute: "numeric"}));
-							this.updateDom();
-						}
-					}					
-				});
+			if (payload == null) {
+				return;
 			}
+			payload.forEach((station) => {
+				if (station["number"] == this.stationid) {
+					this.stationData = station;		
+					updateMillis = this.stationData["values"]["W"]["15m.Cmd.HD"]["dt"];
+					if (updateMillis > this.lastUpdateMillis) {
+						this.lastUpdateMillis = updateMillis;
+						var d = new Date(updateMillis);
+						console.log("HydroTirol - Neue Daten: " + d.toLocaleDateString('de-AT', { hour: "numeric", minute: "numeric"}));
+						this.updateDom();
+					}
+				}					
+			});
 		}
 	}
 });
