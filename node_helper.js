@@ -36,7 +36,7 @@ module.exports = NodeHelper.create({
         // Alle 15min Daten holen
         setInterval(function() { 
             self.fetchStationData();
-        }, 1000 * 60 * 15);
+        }, 1000 * 60 * 5);
         
         // Refresh alle 5s machen
         setInterval(function() { 
