@@ -52,7 +52,7 @@ Module.register("MMM-HydroTirol", {
 			minute: "numeric"
 		};
 		  
-		var wInfo15m = this.stationData["values"]["W"]["15m.Cmd.HD"]
+		var wInfo15m = this.stationData["values"]["W"]["Cmd"]
 		var wtInfo15m = this.stationData["values"]["WT"]["15m.Cmd.HD"]
 		var lastUpdate = new Date(wInfo15m["dt"]);
 		lastUpdateString = lastUpdate.toLocaleDateString('de-AT', options);
@@ -112,7 +112,7 @@ Module.register("MMM-HydroTirol", {
 			payload.forEach((station) => {
 				if (station["number"] == this.stationid) {
 					this.stationData = station;		
-					updateMillis = this.stationData["values"]["W"]["15m.Cmd.HD"]["dt"];
+					updateMillis = this.stationData["values"]["W"]["Cmd"]["dt"];
 					if (updateMillis > this.lastUpdateMillis) {
 						this.lastUpdateMillis = updateMillis;
 						var d = new Date(updateMillis);
